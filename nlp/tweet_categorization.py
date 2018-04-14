@@ -62,7 +62,7 @@ def categorize_tweets(currentTwitterAccount, n_max_tweets = 5, settings=None):
 	    result = re.sub(r"http\S+", "",tweet.full_text)
 	    if language_check(result) == "sv":
 	        documents['documents'].append({'id':i,'language':'sv','text':result})
-	        tweets_raw.append(result)
+	        tweets_raw.append((result, tweet.created_at))
 	        i+=1
 
 
@@ -107,12 +107,11 @@ def categorize_tweets(currentTwitterAccount, n_max_tweets = 5, settings=None):
 	    return topics[values.index(min(values))]
 
 
-	categorized_tweets = [(tweets_raw[i], CATEGORY_NAMES[cluster_topics(topic_dists[i])[0]]) for i in range(len(topic_dists))]
-	print(categorized_tweets)
+	categorized_tweets = [{"text": tweets_raw[i][0], "category": CATEGORY_NAMES[cluster_topics(topic_dists[i])[0]], "time": str(tweets_raw[i][1])} for i in range(len(topic_dists))]
 	return categorized_tweets
 
 if __name__ == '__main__':
 	currentTwitterAccount = "shekarabi"
-	categorize_tweets(currentTwitterAccount)
+	print(categorize_tweets(currentTwitterAccount))
 
 
