@@ -6,6 +6,7 @@
 
 .content {
   flex: 1 0 auto;
+  text-align: center;
 } 
 
 #feature-box-container {
@@ -20,7 +21,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 25px 0px;
+  padding: 10px 5px;
+}
+
+#card-container div {
+  background-color: grey;
+  padding: 10px;
+}
+
+#card-container-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #feature-box {
