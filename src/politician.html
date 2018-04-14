@@ -7,56 +7,77 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <title>Full Stack of Politics - Politictians</title>
+  <title>Politicians</title>
 </head>
 <body>
-  <nav class="bluey lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Full Stack of Politics</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">Politician</a></li>
-        <li><a href="topic.html">Topic</a></li>
-      </ul>
-  </nav>
+  <nav class="primary-background-color montserrat" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo dark-grey-text-bold">Full Stack of Politics</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="index.html" class="dark-grey-text">Home</a></li>
+          <li><a href="#" class="dark-grey-text">Politician</a></li>
+          <li><a href="topic.html" class="dark-grey-text">Topic</a></li>
+        </ul>
+      </div>
+    </nav>
+  <div class="center">
+    <h3>Choose a politician</h3>
+  </div>
   <main class="content" id="card-container-block">
-      <div class="container" item-height="75%">
-        <div class="row">
-            <div class="col s4" id="card-container">
-              <div>
-                <img src="images/Stefan-Lofven.png" height="220px">
-                <h5>Stefan Löfven</h5>
-                <p>Prime Minister of Sweden</p>
-              </div>
+    <div class="row" style="display: flex; justify-content: center;">
+        <div class="col s3"style="margin: 0">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/Stefan-Lofven.png">
+              <a class="btn-floating halfway-fab waves-effect waves-light secondary-background-color"><i class="material-icons">add</i></a>
             </div>
-            <div class="col s4" id="card-container">
-              <div>
-                <img src="images/margot1.jpg" height="220px">
-                <h5>Margot Wallström</h5>
+            <div class="card-content montserrat">
+                <span class="card-title">Stefan Löfven</span>
+              <p>Prime Minister of Sweden</p>
+            </div>
+          </div>
+        </div>
+          <div class="col s3" style="margin: 0">
+            <div class="card">
+              <div class="card-image">
+                <img src="images/margot1.jpg">
+                <a class="btn-floating halfway-fab waves-effect waves-light secondary-background-color"><i class="material-icons">add</i></a>
+              </div>
+              <div class="card-content montserrat">
+                  <span class="card-title">Margot Wallström</span>
                 <p>Deputy Prime Minister of Sweden</p>
               </div>
             </div>
-            <div class="col s4" id="card-container">
-              <div>
-                <img src="images/Kristersson.jpg" height="220px">
-                <h5>Ulf Kristersson</h5>
-                <p>Leader of the Moderate Party</p> 
+          </div>
+            <div class="col s3" style="margin: 0">
+              <div class="card">
+                <div class="card-image">
+                  <img src="images/Kristersson.jpg">
+                  <a class="btn-floating halfway-fab waves-effect waves-light secondary-background-color"><i class="material-icons">add</i></a>
+                </div>
+                <div class="card-content montserrat">
+                    <span class="card-title">Ulf Kristersson</span>
+                  <p>Leader of the Moderate Party</p>
+                </div>
               </div>
             </div>
+          </div>
         </div>
     </div>
-  </main>
-  <footer class="page-footer pinky">
-        <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">About Full Stack of Politics</h5>
-                <p class="grey-text text-lighten-4">What the tool does</p>
-              </div>
-              <div class="col l6 s12">
-                <img id='scb-logo' src="images/logotypescb.gif">
-              </div>
+    </main>
+  <footer class="page-footer primary-background-color montserrat">
+      <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="dark-grey-text-bold">About Full Stack of Politics</h5>
+              <p class="dark-grey-text">What the tool does</p>
+            </div>
+            <div class="col l6 s12">
+              <img id='scb-logo' src="images/logotypescb.gif">
+            </div>
+          </div>
+        </div>
     </footer>
-
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>

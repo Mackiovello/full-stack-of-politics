@@ -1,0 +1,22 @@
+.primary-background-color {
+    background-color: #80cbc4;
+}
+
+.secondary-background-color {
+    background-color: #f48fb1;
+}
+
+.dark-grey-text-bold {
+    color: #333 !important;
+    font-weight: bold;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.dark-grey-text {
+    color: #333 !important; 
+}
