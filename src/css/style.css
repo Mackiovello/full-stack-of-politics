@@ -10,3 +10,9 @@
     color: #333 !important;
     font-weight: bold;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
