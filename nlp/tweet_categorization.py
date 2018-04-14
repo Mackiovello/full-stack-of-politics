@@ -9,21 +9,30 @@ CATEGORIES = [["bostäder", "bostad", "byggande", "bygger"], ["polis", "försvar
 CATEGORY_NAMES = ["Bostäder", "Polisen", "Sjukvården"]
 
 
-def categorize_tweets(currentTwitterAccount, n_max_tweets = 5):
+def load_from_config(config_file="settings.config"):
+	with open(config_file) as f:
+		settings = {item[0].strip(): item[1].strip() for item in [l.split("=") for l in f.readlines()]}
+		return settings
+
+def download_language_model():
 	from polyglot.downloader import downloader
 	downloader.download("embeddings2.sv")
 
-	subscription_key = "7387424f11ab4ec7b08b31f4a4f7f823"
+def categorize_tweets(currentTwitterAccount, n_max_tweets = 5, settings=None):
+	if not settings:
+		settings = load_from_config()
+
+	subscription_key = settings["subscription_key"]
 	api_url = "https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.0/"
 	key_phrase_api_url = api_url + "keyPhrases"
 	language_api_url = api_url + "languages"
 
-	embeddings = Embedding.load("/home/oliver/polyglot_data/embeddings2/sv/embeddings_pkl.tar.bz2")
+	embeddings = Embedding.load(settings["model_location"])
 
-	consumer_key = "0D1k9X4rvKeNjJMU6AjyOYfv2"
-	consumer_secret = "L2sPX4appghs9F4afaT1ISNyHxWgGJAXSoEumzJOQS6IjvltCF"
-	access_token = "434339373-8DKIoTsy5K2OfH8DYdvofQUtAILjZ6ZFQWj4DwJc"
-	access_token_secret = "MbNois2Rfcmtv2EvHb31jjIqm5cHV5oUZQHA5pRJrw6MX"
+	consumer_key = settings["consumer_key"]
+	consumer_secret = settings["consumer_secret"]
+	access_token = settings["access_token"]
+	access_token_secret = settings["access_token_secret"]
 
 	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 	auth.set_access_token(access_token, access_token_secret)
@@ -38,7 +47,6 @@ def categorize_tweets(currentTwitterAccount, n_max_tweets = 5):
 	    headers   = {"Ocp-Apim-Subscription-Key": subscription_key}
 	    response  = requests.post(language_api_url, headers=headers, json={"documents":[{"id":1, "text":string}]})
 	    if response.ok:
-	        print(response.json())
 	        return response.json()["documents"][0]["detectedLanguages"][0]["iso6391Name"]
 	    else:
 	        if response.status_code == 429:
@@ -70,7 +78,6 @@ def categorize_tweets(currentTwitterAccount, n_max_tweets = 5):
 	key_words = [[y for y in x.values()][0] for x in key_phrases["documents"]]
 	key_words = [[y.split(" ") for y in x] for x in key_words]
 	key_words = [[y.strip() for sublist in l for y in sublist] for l in key_words]
-	print(key_words)
 
 
 	### Determine closest category for the sets of key words
