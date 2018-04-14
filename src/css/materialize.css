@@ -774,8 +774,9 @@
   color: #2962FF !important;
 }
 
-.light-blue {
-  background-color: #03a9f4 !important;
+.bluey {
+  background-color: #80cbc4 !important;
+  font-weight: bold;
 }
 
 .light-blue-text {
@@ -1670,8 +1671,8 @@
   color: #ffab00 !important;
 }
 
-.orange {
-  background-color: #ff9800 !important;
+.pinky {
+  background-color: ##f48fb1 !important;
 }
 
 .orange-text {
