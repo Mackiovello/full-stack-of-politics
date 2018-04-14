@@ -1,0 +1,12 @@
+.primary-background-color {
+    background-color: #80cbc4;
+}
+
+.secondary-background-color {
+    background-color: #f48fb1;
+}
+
+.dark-grey-text-bold {
+    color: #333 !important;
+    font-weight: bold;
+}
