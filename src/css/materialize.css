@@ -8,11 +8,18 @@
   flex: 1 0 auto;
 } 
 
-#test-box {
+#feature-box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0px;
+  border: 1px solid pink;
+}
+
+#feature-box {
     width: 300px;
     border: 25px solid green;
     padding: 25px;
-    margin: 25px;
 }
 
  .materialize-red {
@@ -9052,5 +9059,11 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
     bottom: auto;
     text-align: center;
     margin-top: 1.2rem;
+  }
+}
+
+@media screen and (min-device-width: 700px) and (min-width: 984px){
+  #scb-logo {
+    float: right;
   }
 }
