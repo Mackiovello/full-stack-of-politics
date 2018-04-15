@@ -7,6 +7,9 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.15.min.css" type="text/css" />
+  <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.15.min.js"></script>
+  <script type="text/javascript">Bokeh.set_log_level("info");</script>
   <title>Full Stack of Politics</title>
 </head>
 <body>
@@ -20,23 +23,65 @@
       </ul>
     </div>
   </nav>
-  <main class="content">
-      <div class="container" item-height="75%">
-          <!-- add feature box here --> 
-          <div id='feature-box-container'>
-              <div id="feature-box"></div>
-          </div>
+  <main style="display: flex; justify-content: center; align-items: center;">
+      <div>
+          
+        <div class="bk-root">
+          <div class="bk-plotdiv" id="727e9cee-9e87-413e-b9bb-44ec8c081fbc"></div>
+      </div>
+      
+      <script type="application/json" id="a7e86cd9-008c-446b-a562-94559b30999d">
+        {"9de2ca0d-9c02-4bd8-b5f8-ddf22fe49bbd":{"roots":{"references":[{"attributes":{"callback":null},"id":"b29f9d30-8370-40a5-96ad-e1c435ff7aed","type":"DataRange1d"},{"attributes":{"data_source":{"id":"160b20ac-adce-4e0e-8af3-e18c314e23b7","type":"ColumnDataSource"},"glyph":{"id":"5fdb0447-12eb-4627-b707-271ad634e770","type":"Triangle"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"47e161aa-bab8-45d6-8ac7-555dd2fe5e09","type":"Triangle"},"selection_glyph":null,"view":{"id":"2ecd77cd-0aa3-49ba-8fc1-3ab4cfa1cead","type":"CDSView"}},"id":"f5280dff-9874-40e0-a067-6543b3f70130","type":"GlyphRenderer"},{"attributes":{},"id":"20df2cb3-11ed-4b66-b857-0704c00512f5","type":"BasicTicker"},{"attributes":{"dimension":1,"plot":{"id":"bb202800-107e-42b6-98e7-765614f99446","subtype":"Figure","type":"Plot"},"ticker":{"id":"fe5a8ef5-3a91-43b6-9781-3b57652f675a","type":"BasicTicker"}},"id":"a9ac99e2-d141-4b9d-aa8a-d3701643e2cf","type":"Grid"},{"attributes":{"callback":null},"id":"d3474ac5-15ae-40d7-bca6-8ff404577d64","type":"DataRange1d"},{"attributes":{},"id":"34979c47-d190-4b25-a674-1feb2757b0c9","type":"LinearScale"},{"attributes":{"plot":{"id":"bb202800-107e-42b6-98e7-765614f99446","subtype":"Figure","type":"Plot"},"ticker":{"id":"20df2cb3-11ed-4b66-b857-0704c00512f5","type":"BasicTicker"}},"id":"d2a797f8-ac8b-430b-b0c9-a621cb89af3c","type":"Grid"},{"attributes":{"label":{"value":"Housing market statistics"},"renderers":[{"id":"f6260b95-89fc-469f-9227-8bbe5d41cd25","type":"GlyphRenderer"}]},"id":"c3410935-eff2-40a7-bbea-c53735ac78a1","type":"LegendItem"},{"attributes":{},"id":"fe5a8ef5-3a91-43b6-9781-3b57652f675a","type":"BasicTicker"},{"attributes":{"callback":null,"column_names":["x","y","text","time"],"data":{"text":["Jag lovar 150001 bost\u00e4der. Tihi, jag vann!"],"time":["2014-08-29"],"x":[2014.7461187214612],"y":[34722.139726027395]},"selected":null,"selection_policy":null},"id":"11b02cf9-dd8f-4aa9-a8bb-0c902765adaf","type":"ColumnDataSource"},{"attributes":{},"id":"fec8b94b-7c19-4fcc-9b77-c3b5ad1debd2","type":"BasicTickFormatter"},{"attributes":{"source":{"id":"f910a263-adf9-47cd-b05c-3857ef832fc3","type":"ColumnDataSource"}},"id":"ee20c615-5649-4bf6-a696-51503608ce5a","type":"CDSView"},{"attributes":{"callback":null,"column_names":["num_houses_built","year","index"],"data":{"index":["1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016"],"num_houses_built":[66886,57319,35088,21630,12678,13085,13007,11459,11712,12984,15411,19941,19986,25283,23068,29832,30527,32021,22821,19500,20064,25993,29225,29164,34603,42441],"year":["1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016"]},"selected":null,"selection_policy":null},"id":"f910a263-adf9-47cd-b05c-3857ef832fc3","type":"ColumnDataSource"},{"attributes":{"data_source":{"id":"11b02cf9-dd8f-4aa9-a8bb-0c902765adaf","type":"ColumnDataSource"},"glyph":{"id":"f1d14d35-e568-4fc8-9b0c-290f82d1dac9","type":"InvertedTriangle"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"897505de-955a-4115-93e5-4b3ead37c799","type":"InvertedTriangle"},"selection_glyph":null,"view":{"id":"69aee6c6-25f2-40ab-a59e-f432898f3453","type":"CDSView"}},"id":"b536010f-2ec1-4986-8101-94825b111638","type":"GlyphRenderer"},{"attributes":{"label":{"value":"Relevant votings from Stefan L\u00f6fven"},"renderers":[{"id":"f5280dff-9874-40e0-a067-6543b3f70130","type":"GlyphRenderer"}]},"id":"3e3cfa8b-fdb5-43ca-9f8f-f195c69b2cac","type":"LegendItem"},{"attributes":{"source":{"id":"11b02cf9-dd8f-4aa9-a8bb-0c902765adaf","type":"ColumnDataSource"}},"id":"69aee6c6-25f2-40ab-a59e-f432898f3453","type":"CDSView"},{"attributes":{"fill_color":{"value":"#f48fb1"},"line_color":{"value":"#f48fb1"},"size":{"units":"screen","value":20},"x":{"field":"x"},"y":{"field":"y"}},"id":"f1d14d35-e568-4fc8-9b0c-290f82d1dac9","type":"InvertedTriangle"},{"attributes":{"fill_color":{"value":"#80cbc4"},"line_color":{"value":"#80cbc4"},"size":{"units":"screen","value":20},"x":{"field":"x"},"y":{"field":"y"}},"id":"5fdb0447-12eb-4627-b707-271ad634e770","type":"Triangle"},{"attributes":{"callback":null,"renderers":[{"id":"f5280dff-9874-40e0-a067-6543b3f70130","type":"GlyphRenderer"}],"tooltips":[["time","@time"],["proposal topic","@area"],["id","@id"],["voting","@vote"]]},"id":"2035a612-93a2-402c-9337-0a0fe228029d","type":"HoverTool"},{"attributes":{"plot":null,"text":"Total amount of houses built between 1991 and 2016"},"id":"701884b3-26b5-493e-9b5a-ec6ee179b4ac","type":"Title"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_scroll":"auto","active_tap":"auto","tools":[{"id":"beb7f22e-4bbb-4e15-a0ab-4093d6c88483","type":"PanTool"},{"id":"bb78de06-0823-49cb-a955-27fcdccbce8f","type":"WheelZoomTool"},{"id":"1ed29be7-e64a-4a8e-981e-bc5b23ca9463","type":"BoxZoomTool"},{"id":"24be6e75-7130-40c1-81f2-cbda88b096d6","type":"SaveTool"},{"id":"bf49bf93-da33-4b16-b9c7-ed5ecb46ed11","type":"ResetTool"},{"id":"516374fd-da1c-4c4f-9c92-b03365ef3dfc","type":"HelpTool"},{"id":"6249e3cc-f5ca-4ade-91aa-b4aece3c2779","type":"HoverTool"},{"id":"d89020df-fbf1-4755-98cc-9fddae6bc470","type":"HoverTool"},{"id":"2035a612-93a2-402c-9337-0a0fe228029d","type":"HoverTool"}]},"id":"0a7ba384-55be-40e2-acc2-083963007ad9","type":"Toolbar"},{"attributes":{},"id":"516374fd-da1c-4c4f-9c92-b03365ef3dfc","type":"HelpTool"},{"attributes":{"data_source":{"id":"f910a263-adf9-47cd-b05c-3857ef832fc3","type":"ColumnDataSource"},"glyph":{"id":"598aa022-7e1c-4e03-b28d-149eea372780","type":"Circle"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"be621b64-8c7c-4ba9-8b1a-ee50e304db44","type":"Circle"},"selection_glyph":null,"view":{"id":"ee20c615-5649-4bf6-a696-51503608ce5a","type":"CDSView"}},"id":"b4b6ccf9-b1d6-49e4-be9a-6dd84cea1736","type":"GlyphRenderer"},{"attributes":{"below":[{"id":"edc4608b-48d9-4dbe-8843-42c7b1b5e62f","type":"LinearAxis"}],"left":[{"id":"5a9c8c46-e20d-437f-a388-77c7cf2cae48","type":"LinearAxis"}],"plot_width":1200,"renderers":[{"id":"edc4608b-48d9-4dbe-8843-42c7b1b5e62f","type":"LinearAxis"},{"id":"d2a797f8-ac8b-430b-b0c9-a621cb89af3c","type":"Grid"},{"id":"5a9c8c46-e20d-437f-a388-77c7cf2cae48","type":"LinearAxis"},{"id":"a9ac99e2-d141-4b9d-aa8a-d3701643e2cf","type":"Grid"},{"id":"b77904eb-d40f-4ab2-973b-ea45b16b92d7","type":"BoxAnnotation"},{"id":"caee7e88-032f-417e-94e2-9d1eb43cb22f","type":"Legend"},{"id":"f6260b95-89fc-469f-9227-8bbe5d41cd25","type":"GlyphRenderer"},{"id":"b4b6ccf9-b1d6-49e4-be9a-6dd84cea1736","type":"GlyphRenderer"},{"id":"b536010f-2ec1-4986-8101-94825b111638","type":"GlyphRenderer"},{"id":"f5280dff-9874-40e0-a067-6543b3f70130","type":"GlyphRenderer"}],"title":{"id":"701884b3-26b5-493e-9b5a-ec6ee179b4ac","type":"Title"},"toolbar":{"id":"0a7ba384-55be-40e2-acc2-083963007ad9","type":"Toolbar"},"x_range":{"id":"d3474ac5-15ae-40d7-bca6-8ff404577d64","type":"DataRange1d"},"x_scale":{"id":"aec7a604-b3bb-4ded-8187-90568e4db8cc","type":"LinearScale"},"y_range":{"id":"b29f9d30-8370-40a5-96ad-e1c435ff7aed","type":"DataRange1d"},"y_scale":{"id":"34979c47-d190-4b25-a674-1feb2757b0c9","type":"LinearScale"}},"id":"bb202800-107e-42b6-98e7-765614f99446","subtype":"Figure","type":"Plot"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"b77904eb-d40f-4ab2-973b-ea45b16b92d7","type":"BoxAnnotation"},{"attributes":{},"id":"24be6e75-7130-40c1-81f2-cbda88b096d6","type":"SaveTool"},{"attributes":{"overlay":{"id":"b77904eb-d40f-4ab2-973b-ea45b16b92d7","type":"BoxAnnotation"}},"id":"1ed29be7-e64a-4a8e-981e-bc5b23ca9463","type":"BoxZoomTool"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"size":{"units":"screen","value":5},"x":{"field":"year"},"y":{"field":"num_houses_built"}},"id":"be621b64-8c7c-4ba9-8b1a-ee50e304db44","type":"Circle"},{"attributes":{},"id":"bb78de06-0823-49cb-a955-27fcdccbce8f","type":"WheelZoomTool"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","line_width":5,"x":{"field":"year"},"y":{"field":"num_houses_built"}},"id":"29a5bda9-453b-424e-ba70-74bed7000bac","type":"Line"},{"attributes":{"callback":null,"renderers":[{"id":"f6260b95-89fc-469f-9227-8bbe5d41cd25","type":"GlyphRenderer"},{"id":"b4b6ccf9-b1d6-49e4-be9a-6dd84cea1736","type":"GlyphRenderer"}],"tooltips":[["time","@year"],["number of houses built","@num_houses_built"]]},"id":"6249e3cc-f5ca-4ade-91aa-b4aece3c2779","type":"HoverTool"},{"attributes":{"line_color":"#1f77b4","line_width":5,"x":{"field":"year"},"y":{"field":"num_houses_built"}},"id":"e3edb2eb-e460-4442-9969-bd41514b675c","type":"Line"},{"attributes":{"data_source":{"id":"f910a263-adf9-47cd-b05c-3857ef832fc3","type":"ColumnDataSource"},"glyph":{"id":"e3edb2eb-e460-4442-9969-bd41514b675c","type":"Line"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"29a5bda9-453b-424e-ba70-74bed7000bac","type":"Line"},"selection_glyph":null,"view":{"id":"2b04c7b3-b58b-4b5b-9969-ec5c8c0fd872","type":"CDSView"}},"id":"f6260b95-89fc-469f-9227-8bbe5d41cd25","type":"GlyphRenderer"},{"attributes":{"axis_label":"Year","formatter":{"id":"fec8b94b-7c19-4fcc-9b77-c3b5ad1debd2","type":"BasicTickFormatter"},"plot":{"id":"bb202800-107e-42b6-98e7-765614f99446","subtype":"Figure","type":"Plot"},"ticker":{"id":"20df2cb3-11ed-4b66-b857-0704c00512f5","type":"BasicTicker"}},"id":"edc4608b-48d9-4dbe-8843-42c7b1b5e62f","type":"LinearAxis"},{"attributes":{},"id":"bf49bf93-da33-4b16-b9c7-ed5ecb46ed11","type":"ResetTool"},{"attributes":{"fill_color":{"value":"white"},"line_color":{"value":"#1f77b4"},"size":{"units":"screen","value":5},"x":{"field":"year"},"y":{"field":"num_houses_built"}},"id":"598aa022-7e1c-4e03-b28d-149eea372780","type":"Circle"},{"attributes":{"source":{"id":"160b20ac-adce-4e0e-8af3-e18c314e23b7","type":"ColumnDataSource"}},"id":"2ecd77cd-0aa3-49ba-8fc1-3ab4cfa1cead","type":"CDSView"},{"attributes":{"callback":null,"renderers":[{"id":"b536010f-2ec1-4986-8101-94825b111638","type":"GlyphRenderer"}],"tooltips":[["time","@time"],["text","@text"]]},"id":"d89020df-fbf1-4755-98cc-9fddae6bc470","type":"HoverTool"},{"attributes":{},"id":"beb7f22e-4bbb-4e15-a0ab-4093d6c88483","type":"PanTool"},{"attributes":{},"id":"ac40b008-17e5-43c3-99c4-e90364405ce5","type":"BasicTickFormatter"},{"attributes":{"items":[{"id":"c3410935-eff2-40a7-bbea-c53735ac78a1","type":"LegendItem"},{"id":"e5b7ef7a-b6a4-4c7b-bc59-9a42d9ccf739","type":"LegendItem"},{"id":"3e3cfa8b-fdb5-43ca-9f8f-f195c69b2cac","type":"LegendItem"}],"plot":{"id":"bb202800-107e-42b6-98e7-765614f99446","subtype":"Figure","type":"Plot"}},"id":"caee7e88-032f-417e-94e2-9d1eb43cb22f","type":"Legend"},{"attributes":{"source":{"id":"f910a263-adf9-47cd-b05c-3857ef832fc3","type":"ColumnDataSource"}},"id":"2b04c7b3-b58b-4b5b-9969-ec5c8c0fd872","type":"CDSView"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"size":{"units":"screen","value":20},"x":{"field":"x"},"y":{"field":"y"}},"id":"897505de-955a-4115-93e5-4b3ead37c799","type":"InvertedTriangle"},{"attributes":{"callback":null,"column_names":["x","y","id","area","time","vote"],"data":{"area":["Fler bost\u00e4der \u00e5t unga och studenter","Plan- och byggfr\u00e5gor","Plan- och byggfr\u00e5gor"],"id":["Civilutskottets bet\u00e4nkande 2013/14:CU22","Civilutskottets bet\u00e4nkande 2010/11:CU22","BoUs bet\u00e4nkande 2005/06:BoU7"],"time":["2014-04-10","2011-04-06","2006-03-08"],"vote":["yes","yes","yes"],"x":[2014.3607305936073,2011.3497716894976,2006.271917808219],"y":[29626.013698630137,20637.796347031963,28520.98287671233]},"selected":null,"selection_policy":null},"id":"160b20ac-adce-4e0e-8af3-e18c314e23b7","type":"ColumnDataSource"},{"attributes":{},"id":"aec7a604-b3bb-4ded-8187-90568e4db8cc","type":"LinearScale"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"size":{"units":"screen","value":20},"x":{"field":"x"},"y":{"field":"y"}},"id":"47e161aa-bab8-45d6-8ac7-555dd2fe5e09","type":"Triangle"},{"attributes":{"label":{"value":"Relevant tweets from Stefan L\u00f6fven"},"renderers":[{"id":"b536010f-2ec1-4986-8101-94825b111638","type":"GlyphRenderer"}]},"id":"e5b7ef7a-b6a4-4c7b-bc59-9a42d9ccf739","type":"LegendItem"},{"attributes":{"axis_label":"Total amount of houses built","formatter":{"id":"ac40b008-17e5-43c3-99c4-e90364405ce5","type":"BasicTickFormatter"},"plot":{"id":"bb202800-107e-42b6-98e7-765614f99446","subtype":"Figure","type":"Plot"},"ticker":{"id":"fe5a8ef5-3a91-43b6-9781-3b57652f675a","type":"BasicTicker"}},"id":"5a9c8c46-e20d-437f-a388-77c7cf2cae48","type":"LinearAxis"}],"root_ids":["bb202800-107e-42b6-98e7-765614f99446"]},"title":"Bokeh Application","version":"0.12.15"}}
+      </script>
+      <script type="text/javascript">
+        (function() {
+          var fn = function() {
+            Bokeh.safely(function() {
+              (function(root) {
+                function embed_document(root) {
+                  
+                var docs_json = document.getElementById('a7e86cd9-008c-446b-a562-94559b30999d').textContent;
+                var render_items = [{"docid":"9de2ca0d-9c02-4bd8-b5f8-ddf22fe49bbd","elementid":"727e9cee-9e87-413e-b9bb-44ec8c081fbc","modelid":"bb202800-107e-42b6-98e7-765614f99446"}];
+                root.Bokeh.embed.embed_items(docs_json, render_items);
+              
+                }
+                if (root.Bokeh !== undefined) {
+                  embed_document(root);
+                } else {
+                  var attempts = 0;
+                  var timer = setInterval(function(root) {
+                    if (root.Bokeh !== undefined) {
+                      embed_document(root);
+                      clearInterval(timer);
+                    }
+                    attempts++;
+                    if (attempts > 100) {
+                      console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing")
+                      clearInterval(timer);
+                    }
+                  }, 10, root)
+                }
+              })(window);
+            });
+          };
+          if (document.readyState != "loading") fn();
+          else document.addEventListener("DOMContentLoaded", fn);
+        })();
+      </script>>
       </div>
   </main>
   <footer class="page-footer primary-background-color montserrat">
       <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="dark-grey-text-bold">About Full Stack of Politics</h5>
-              <p class="dark-grey-text">What the tool does</p>
-            </div>
-            <div class="col l6 s12">
-              <img id='scb-logo' src="images/logotypescb.gif">
+        <div class="row">
+          <div class="col l6 s12">
+              <h5 class="dark-grey-text-bold">Visualize and track accountability</h5>
+              <p class="dark-grey-text">Curated data on your politicians on the topics you care about.</p>
+              </div>
+              <div class="col l6 s12">
+              <div>
+                <img id="scb-logo" src="images/logotypescb.gif">
+                <p></p>
+              </div>
             </div>
           </div>
         </div>

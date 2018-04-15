@@ -38,19 +38,22 @@ def get_tweets_for_plot(tweets, df):
 
 def get_voting_for_plot(voting, df):
     x = []
-    text = []
+    area = []
     y = []
     time = []
     vote = []
+    id = []
     for i in range(len(voting)):
-        text.append(voting[i]['text'])
+        area.append(voting[i]['area'])
         vote.append(voting[i]['vote'])
+        id.append(voting[i]['id'])
         time_data = voting[i]['time']
         current_x, current_y = get_coordinates(time_data, df, offset=-1500)
         x.append(current_x)
         y.append(current_y)
         time.append(time_data.split(' ')[0])
-    return ColumnDataSource(dict(x=x, y=y, text=text, time=time, vote=vote))
+    return ColumnDataSource(
+        dict(x=x, y=y, id=id, area=area, time=time, vote=vote))
 
 
 def plot_stats(width,
@@ -79,8 +82,11 @@ def plot_stats(width,
         'year',
         'num_houses_built',
         source=src,
-        legend='Housing market statistics')
-    circle = sum_p.circle('year', 'num_houses_built', source=src)
+        legend='Housing market statistics',
+        line_width=5)
+    circle = sum_p.circle('year', 'num_houses_built', 
+            fill_color='white', 
+            size=5, source=src)
 
     sum_hover = HoverTool(
         tooltips=[('time', '@year'), ('number of houses built',
@@ -92,11 +98,11 @@ def plot_stats(width,
 
     # Add tweets data
     if tweets != []:
-        tweet_data = get_tweets_for_plot(dummy_tweets, summary_df)
+        tweet_data = get_tweets_for_plot(tweets, summary_df)
         tweet_triangles = sum_p.inverted_triangle(
             x='x',
             y='y',
-            size=15,
+            size=20,
             color='#f48fb1',
             source=tweet_data,
             legend='Relevant tweets from ' + politician_name)
@@ -107,17 +113,17 @@ def plot_stats(width,
 
     # Add voting data
     if voting != []:
-        voting_data = get_voting_for_plot(dummy_voting, summary_df)
+        voting_data = get_voting_for_plot(voting, summary_df)
         voting_triangles = sum_p.triangle(
             x='x',
             y='y',
-            size=15,
+            size=20,
             color='#80cbc4',
             source=voting_data,
             legend='Relevant votings from ' + politician_name)
         voting_hover = HoverTool(
-            tooltips=[('time', '@time'), ('proposal name', '@text'), ('voting',
-                                                                      'vote')],
+            tooltips=[('time', '@time'), ('proposal topic', '@area'),
+                      ('id', '@id'), ('voting', '@vote')],
             renderers=[voting_triangles])
         sum_p.add_tools(voting_hover)
 
@@ -125,29 +131,26 @@ def plot_stats(width,
     save(sum_p)
 
 
-def get_dummy_data():
-    dummy_tweets = [{
-        'time':
-        '2010-10-10 11:11:11',
-        'text':
-        'something useless, it\'s very useful, i promise... '
-    }, {
-        'time': '2015-10-10 11:11:11',
-        'text': 'something useful. yeah.... yeah.... yeah.......'
+def get_sample_data():
+    tweets = [{
+        'time': '2014-08-29 17:53:00',
+        'text': 'Jag lovar 150001 bostäder. Tihi, jag vann!'
     }]
 
-    dummy_voting = [{
-        'time': '2010-10-10 11:11:11',
-        'text': 'voting about something',
+    votings = [{
+        'time': '2014-04-10',
+        'id': 'Civilutskottets betänkande 2013/14:CU22',
+        'area': 'Fler bostäder åt unga och studenter',
         'vote': 'yes'
     }, {
-        'time': '2015-10-10 11:11:11',
-        'text': 'voting about something',
-        'vote': 'no'
+        'time': '2011-04-06',
+        'id': 'Civilutskottets betänkande 2010/11:CU22',
+        'area': 'Plan- och byggfrågor',
+        'vote': 'yes'
+    }, {
+        'time': '2006-03-08',
+        'id': 'BoUs betänkande 2005/06:BoU7',
+        'vote': 'yes',
+        'area': 'Plan- och byggfrågor'
     }]
-    return dummy_tweets, dummy_voting
-
-
-dummy_tweets, dummy_voting = get_dummy_data()
-plot_stats(
-    800, 600, 'house-data.txt', tweets=dummy_tweets, voting=dummy_voting)
+    return tweets, votings
