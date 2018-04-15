@@ -1,0 +1,29 @@
+service: aws-python-simple-http-endpoint
+
+frameworkVersion: ">=1.2.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: python3.6
+
+functions:
+  currentTime:
+    handler: handler.endpoint
+    events:
+      - http:
+          path: /
+          method: get
+    environment:
+      SUBSCRIPTION_KEY    : ${ssm:subscription_key   }
+      CONSUMER_KEY        : ${ssm:consumer_key       }
+      CONSUMER_SECRET     : ${ssm:consumer_secret    }
+      ACCESS_TOKEN        : ${ssm:access_token       }
+      ACCESS_TOKEN_SECRET : ${ssm:access_token_secret}
+      MODEL_LOCATION      : ${ssm:model_location     }
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+    pythonBin: /usr/bin/python

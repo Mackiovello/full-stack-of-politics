@@ -1,0 +1,5 @@
+pyicu
+tweepy
+polyglot
+requests
+numpy
